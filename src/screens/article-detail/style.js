@@ -9,8 +9,8 @@ export default StyleSheet.create({
     backgroundColor: colors.white,
   },
   scrollView: {
-    flex: 1,
     paddingHorizontal: 24,
+    paddingBottom: 32,
   },
   image: {
     width: width,

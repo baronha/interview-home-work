@@ -10,7 +10,6 @@ const Home = () => {
   const [data, setData] = useState([]);
   const [articleMain, setArticleMain] = useState({});
   const [isLoading, setLoading] = useState(true);
-  const [barStyle, setBarStyle] = useState('dark-content');
 
   useEffect(() => {
     const subscriber = firestore()
@@ -25,7 +24,6 @@ const Home = () => {
         });
         const main = {...articles[0]};
         setArticleMain(main);
-        articles.splice(0);
         setData(articles);
         setLoading(false);
       });
@@ -33,7 +31,7 @@ const Home = () => {
   }, []);
 
   const onScroll = Animated.event(
-    [{nativeEvent: {contentOffset: {y: scrollY,}}}],
+    [{nativeEvent: {contentOffset: {y: scrollY}}}],
     {
       useNativeDriver: false,
     },
@@ -41,21 +39,17 @@ const Home = () => {
 
   return (
     <View style={style.container}>
-      <StatusBar barStyle={barStyle} />
+      <StatusBar barStyle={'dark-content'} />
       <Header scrollY={scrollY} />
       <FlatList
         style={{flex: 1}}
+        contentContainerStyle={{paddingBottom: 32}}
         data={data}
         scrollEventThrottle={16}
-        ListHeaderComponent={
-          <View>
-            <ArticleMain item={articleMain} />
-            <ArticleToday />
-          </View>
-        }
+        ListHeaderComponent={<ArticleMain item={articleMain} />}
         keyExtractor={item => item.id}
         renderItem={({item, index}) => {
-          return <ArticleItem item={item} />;
+          return index !== 0 && <ArticleItem item={item} />;
         }}
         onScroll={onScroll}
       />

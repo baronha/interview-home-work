@@ -9,7 +9,10 @@ const ArticleDetail = ({route}) => {
   console.log(data);
   return (
     <View style={style.container}>
-      <ScrollView style={style.scrollView} scrollEventThrottle={16}>
+      <ScrollView
+        style={style.container}
+        contentContainerStyle={style.scrollView}
+        scrollEventThrottle={16}>
         <Image
           style={style.image}
           source={{uri: data.image}}

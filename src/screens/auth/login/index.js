@@ -56,6 +56,7 @@ const Login = () => {
             selectionColor={colors.black}
             placeholderTextColor={colors.grey}
             placeholder={'Tên đăng nhập'}
+            autoCapitalize={false}
           />
           <TextInput
             value={pass}
