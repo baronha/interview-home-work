@@ -12,8 +12,8 @@
   
 ## Important note
 
-You can run in iPhone 11. I don't have enough time to edit some things
-  
+My advice is that you should only run on iPhone 11.
+
 ## Result
 <p align="left">
 
