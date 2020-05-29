@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  NavigationActions,
-  StackActions,
-  CommonActions,
-} from '@react-navigation/native';
+import {StackActions, CommonActions} from '@react-navigation/native';
 
 let _navigator;
 
@@ -21,10 +17,10 @@ function push(...args) {
   navigationRef.current?.dispatch(StackActions.push(...args));
 }
 
-function reset() {
+function reset(routeName) {
   const resetAction = StackActions.reset({
-    index: 0,
-    actions: [NavigationActions.navigate({routeName: 'SplashScreen'})],
+    index: 1,
+    actions: [navigationRef.current?.navigate({routeName})],
   });
   _navigator.dispatch(resetAction);
 }

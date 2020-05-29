@@ -21,7 +21,6 @@ export const login = (userName, password) => {
             JSON.stringify(dataLogin),
           ).then(() => {
             NavigationService.navigate('Main');
-            alert('Đăng nhập thành công');
           });
         } catch (e) {
           console.log(e);

@@ -1,8 +1,17 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text, SafeAreaView, ScrollView, TextInput} from 'react-native';
+import {
+  View,
+  Text,
+  SafeAreaView,
+  ScrollView,
+  TextInput,
+  TouchableOpacity,
+} from 'react-native';
 import style from './style';
 import {getUserInfo} from '../../../../utils/helpers';
 import colors from '../../../../utils/colors';
+import Icon from 'react-native-vector-icons/Feather';
+import ImagePicker from 'react-native-image-crop-picker';
 
 const CreatePost = () => {
   const [title, setTitle] = useState('');
@@ -28,6 +37,12 @@ const CreatePost = () => {
     setContent(value);
   };
 
+  const selectImage = () => {
+    // ImagePicker.openPicker().then(image => {
+    //   console.log(image);
+    // });
+  };
+
   return (
     <View style={style.container}>
       <SafeAreaView />
@@ -35,6 +50,9 @@ const CreatePost = () => {
         <Text style={style.titleMain}>Thêm bài viết mới</Text>
       </View>
       <ScrollView contentContainerStyle={style.content}>
+        <TouchableOpacity style={style.buttonSelectImage} onPress={selectImage}>
+          <Text style={style.text}>Ảnh bìa bài viết</Text>
+        </TouchableOpacity>
         <TextInput
           value={title}
           onChangeText={onChangeTitle}
