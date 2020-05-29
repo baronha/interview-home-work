@@ -12,7 +12,7 @@
   
 ## Important note
 
-My advice is that you should only run on iPhone 11.
+My advice is that you should only run on iPhone 11(Simulator).
 
 ## Result
 <p align="left">
