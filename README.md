@@ -4,10 +4,9 @@
 
   This is a **Small Project Test** for online interview at Zigvy Corp. The requirement is to create a blog website. But I used the React Native framework to write a mobile application in a completely different way and a different UI.
 
-**Front-end**.
+**Technical**
+
   - React Native
-  
-**Back-end**.
   - Firebase
   
 ## Important note
